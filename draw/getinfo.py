@@ -22,3 +22,5 @@ def getPixels():
         pixel1.Y = int(x[4])
         pixels.append(pixel1)
     return pixels
+
+#check
