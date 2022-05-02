@@ -1,0 +1,6 @@
+__pycache__/
+draw/__pycache__/
+draw/final
+image/
+rplace/
+.gitignore
