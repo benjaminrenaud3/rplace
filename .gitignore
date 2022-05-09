@@ -4,3 +4,5 @@ draw/final
 image/
 rplace/
 .gitignore
+test.py
+heatmap.json
