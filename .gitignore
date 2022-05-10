@@ -7,3 +7,5 @@ test.py
 heatmap.json
 rplace/
 .vscode/
+drawPixelInHours/selectedPixels.txt
+heatmap/heatmap.json
