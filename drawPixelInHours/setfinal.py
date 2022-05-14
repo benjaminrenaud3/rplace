@@ -7,7 +7,7 @@ def set_selection():
     """
 
     pixels = []
-    for filename inos.listdir("../rplace"):
+    for filename in os.listdir("../rplace"):
         with open(os.path.join("../rplace", filename), 'r') as f:
             file = f.read().splitlines()
             for i, line in enumerate(file, 1):

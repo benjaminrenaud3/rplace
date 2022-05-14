@@ -9,3 +9,4 @@ rplace/
 .vscode/
 drawPixelInHours/selectedPixels.txt
 heatmap/heatmap.json
+colors/colors.json
