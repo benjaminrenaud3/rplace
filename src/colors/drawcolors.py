@@ -10,7 +10,7 @@ def draw_color():
     """
 
     colors = json.load(open("colors.json"))
-    colors = OrderedDict(sorted(colors.items(), key=lambda t: t[1]))
+    colors = OrderedDict(sorted(colors.items(), key=lambda t: t[1], reverse=True))
     colors = dict(list(colors.items())[:15])
 
     labels = colors.keys()

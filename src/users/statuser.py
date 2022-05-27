@@ -1,6 +1,4 @@
 from pstats import Stats
-import matplotlib.pyplot as plt
-import numpy as np
 import json
 import time
 import os
@@ -22,46 +20,16 @@ def group_person():
     user_stat = [[], [], [], []]
 
     for i, user in enumerate(all_users):
-        user_stat[i].append(sum(0 < i < 3 for i in user.values()))
-        user_stat[i].append(sum(3 <= i <= 6  for i in user.values()))
-        user_stat[i].append(sum(7 <= i <= 10 for i in user.values()))
-        user_stat[i].append(sum(11 <= i <= 15 for i in user.values()))
-        user_stat[i].append(sum(15 < i for i in user.values()))
+        user_stat[i].append(sum(1 <= i <= 4 for i in user.values()))
+        user_stat[i].append(sum(5 <= i <= 8  for i in user.values()))
+        user_stat[i].append(sum(9 <= i <= 12 for i in user.values()))
+        user_stat[i].append(sum(13 <= i <= 16 for i in user.values()))
+        user_stat[i].append(sum(16 < i for i in user.values()))
 
     if os.path.exists('userstat.json'):
         os.remove('userstat.json')
     with open('userstat.json', 'w') as fp:
         json.dump(userstat, fp)
-
-    print("--- %s seconds ---" % (time.time() - start_time))
-
-def user_bar_graph():
-    """
-    Draw a bar graph with the userstat file
-    """
-    start_time = time.time()
-
-    user_stat = json.load(open("userstat.json"))
-    X = np.arange(5)
-    fig = plt.figure()
-    ax = fig.add_axes([0, 0, 1, 1])
-    ax.bar(X + 0.00, user_stat[0], color = '#FF0000', width = 0.20)
-    ax.bar(X + 0.20, user_stat[1], color = '#0800FF', width = 0.20)
-    ax.bar(X + 0.40, user_stat[2], color = '#00CA19', width = 0.20)
-    ax.bar(X + 0.60, user_stat[3], color = '#DFDB00', width = 0.20)
-
-    # data = [[30, 25, 50, 20, 17],
-    # [40, 23, 51, 17, 14],
-    # [35, 22, 45, 19, 18],
-    # [35, 22, 45, 19, 23]]
-    # X = np.arange(5)
-    # fig = plt.figure()
-    # ax = fig.add_axes([0,0,1,1])
-    # ax.bar(X + 0.00, data[0], color = 'b', width = 0.20)
-    # ax.bar(X + 0.20, data[1], color = 'g', width = 0.20)
-    # ax.bar(X + 0.40, data[2], color = 'r', width = 0.20)
-    # ax.bar(X + 0.60, data[3], color = 'b', width = 0.20)
-    plt.show()
 
     print("--- %s seconds ---" % (time.time() - start_time))
 
@@ -118,4 +86,3 @@ def user_basic_stat():
 if __name__ == '__main__':
     # group_person()
     user_basic_stat()
-    # user_bar_graph()

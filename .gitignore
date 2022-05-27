@@ -13,3 +13,4 @@ src/colors/colors.json
 src/users/person.json
 src/users/stats.txt
 src/users/userstat.json
+src/last.json
