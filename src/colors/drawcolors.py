@@ -16,7 +16,7 @@ def draw_color():
     labels = colors.keys()
     items = colors.values()
 
-    plt.figure(figsize = (15,15))
+    plt.figure(figsize = (1,1))
     plt.pie(items, labels = labels, colors=labels, autopct = lambda x: str(round(x, 2)) + '%')
     plt.show()
 
