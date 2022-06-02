@@ -13,7 +13,6 @@ def get_each_person():
 
     person = [{}, {}, {}, {}]
 
-
     for inc, filename in enumerate(os.listdir("../rplace")):
         print(inc)
         with open(os.path.join("../rplace", filename), 'r') as f:

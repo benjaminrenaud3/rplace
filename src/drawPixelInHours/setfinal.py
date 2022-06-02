@@ -31,7 +31,6 @@ def write_selection():
     file = open("selectedPixels.txt", "a")
     pixels = set_selection()
 
-    print(len(pixels))
     for pixel in pixels:
         file.write(pixel + "\n")
     file.close()
