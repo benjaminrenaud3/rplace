@@ -14,17 +14,17 @@ def draw_and_save():
 
     pixels = get_pixel()
 
-    if os.path.exists('../image/rplace.png'):
-        os.remove('../image/rplace.png')
+    if os.path.exists('rplace.png'):
+        os.remove('rplace.png')
         im = Image.new('1', (2000,2000))
-        im.save('../image/rplace.png')
-    image = Image.open("../image/rplace.png") 
+        im.save('rplace.png')
+    image = Image.open("rplace.png") 
     image = image.convert('RGBA')
 
     for pixel in pixels:
         image.putpixel((pixel.X, pixel.Y), ImageColor.getrgb(pixel.color))
 
-    image.save('../image/rplace.png')
+    image.save('rplace.png')
     image.show()
 
 

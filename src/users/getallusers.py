@@ -1,7 +1,10 @@
 import os
 import json
 import math
+import sys
+sys.path.append('../')
 
+from customClass.createfile import create_file
 
 def get_each_person():
     """
@@ -27,10 +30,7 @@ def get_each_person():
                 else:
                     person[math.floor((inc)/20)][split[1]] = 1
     # print(len(person[0]), len(person[1]), len(person[2]), len(person[3]))
-    if os.path.exists('person.json'):
-        os.remove('person.json')
-    with open('person.json', 'w') as fp:
-        json.dump(person, fp)
+    create_file("src/users/person.json", person)
 
     return()
 

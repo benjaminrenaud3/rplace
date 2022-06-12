@@ -2,7 +2,10 @@ from pstats import Stats
 import json
 import time
 import os
+import sys
+sys.path.append('../')
 
+from customClass.createfile import create_file
 from collections import OrderedDict
 from statistics import mean, median, quantiles
 
@@ -26,10 +29,7 @@ def group_person():
         user_stat[i].append(sum(13 <= i <= 16 for i in user.values()))
         user_stat[i].append(sum(16 < i for i in user.values()))
 
-    if os.path.exists('userstat.json'):
-        os.remove('userstat.json')
-    with open('userstat.json', 'w') as fp:
-        json.dump(userstat, fp)
+    create_file("src/users/userstat.json", user_stat)
 
     print("--- %s seconds ---" % (time.time() - start_time))
 

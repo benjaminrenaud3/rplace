@@ -1,8 +1,9 @@
 import sys
-import webbrowser
 import os
-import time
+import json
+sys.path.append('../')
 
+from customClass.createfile import create_file
 from PIL import Image, ImageColor
 
 
@@ -36,10 +37,7 @@ def get_last_pixel():
                 else:
                         last_pixels[pixel_coord] = pixel_value
 
-    if os.path.exists('last.json'):
-        os.remove('last.json')
-    with open('last.json', 'w') as fp:
-        json.dump(last_pixels, fp)
+    create_file("src/users/last.json", last_pixels)
 
 def draw_all():
     """

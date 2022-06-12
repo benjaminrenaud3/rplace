@@ -1,5 +1,9 @@
 import os
 import json
+import sys
+sys.path.append('../')
+
+from customClass.createfile import create_file
 
 
 def get_number_of_colors():
@@ -25,10 +29,7 @@ def get_number_of_colors():
                     colors[split[2]] += 1
                 else:
                     colors[split[2]] = 1
-    if os.path.exists('colors.json'):
-        os.remove('colors.json')
-    with open('colors.json', 'w') as fp:
-        json.dump(colors, fp)
+    create_file("src/colors/colors.json", colors)
 
     return()
 
